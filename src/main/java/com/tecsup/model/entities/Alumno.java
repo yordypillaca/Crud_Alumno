@@ -1,33 +1,31 @@
 package com.tecsup.model.entities;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "alumnos")
+@Document(collection = "alumnos")
 public class Alumno {
 
     @Id
-    @NotNull
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column
+    private String id;
+    
     @NotNull
     private String nombre;
-    @Column
+    
     @NotNull
     private String dni;
-    @Column
+    
     @NotNull
     private String email;
-    @Column
+    
     @NotNull
     private String telefono;
 
     public Alumno() {
 
     }
-    public Alumno(int id, String nombre, String dni, String email, String telefono) {
+    public Alumno(String id, String nombre, String dni, String email, String telefono) {
         this.id = id;
         this.nombre = nombre;
         this.dni = dni;
@@ -35,11 +33,11 @@ public class Alumno {
         this.telefono = telefono;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

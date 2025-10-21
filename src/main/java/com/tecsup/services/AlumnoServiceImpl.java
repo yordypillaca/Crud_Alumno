@@ -18,7 +18,7 @@ public class AlumnoServiceImpl implements AlumnoService {
     }
 
     @Override
-    public Alumno findByIdStudent(int id) {
+    public Alumno findByIdStudent(String id) {
         return dao.findById(id).orElse(null);
     }
 
@@ -29,7 +29,7 @@ public class AlumnoServiceImpl implements AlumnoService {
     }
 
     @Override
-    public void deleteStudent(int id) {
+    public void deleteStudent(String id) {
         dao.deleteById(id);
     }
 

@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface CursoService{
     public List<Curso> findAllCourse();
-    public Curso findByIdCourse(int id);
+    public Curso findByIdCourse(String id);
     public void saveCourse(Curso curso);
-    public void deleteCourse(int id);
+    public void deleteCourse(String id);
     List<Curso> searchByNombre(String nombre);
 
 }

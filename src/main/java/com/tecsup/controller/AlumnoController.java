@@ -42,7 +42,7 @@ public class AlumnoController {
 
     // Mostrar formulario con datos existentes para editar
     @GetMapping("/form/{id}")
-    public String editar(@PathVariable("id") int id, Model model) {
+    public String editar(@PathVariable("id") String id, Model model) {
         Alumno alumno = servicio.findByIdStudent(id);
         model.addAttribute("alumno", alumno);
         model.addAttribute("titulo", "Editar Alumno");
@@ -60,7 +60,7 @@ public class AlumnoController {
 
     @GetMapping("/eliminar/{id}")
     @RequestMapping(value = "/eliminar/{id}", method = RequestMethod.GET)
-    public String eliminar(@PathVariable("id") int id) {
+    public String eliminar(@PathVariable("id") String id) {
         servicio.deleteStudent(id); // Llama al servicio que ya tienes
         return "redirect:/alumnos/listar"; // Redirige al listado después de eliminar
     }

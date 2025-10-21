@@ -43,7 +43,7 @@ public class CursoController {
 
     // Mostrar formulario con datos existentes para editar
     @GetMapping("/form/{id}")
-    public String editar(@PathVariable("id") int id, Model model) {
+    public String editar(@PathVariable("id") String id, Model model) {
         Curso curso = servicio.findByIdCourse(id);
         model.addAttribute("curso", curso);
         model.addAttribute("titulo", "Editar Curso");
@@ -61,7 +61,7 @@ public class CursoController {
 
     // Eliminar un curso por id
     @GetMapping("/eliminar/{id}")
-    public String eliminar(@PathVariable("id") int id) {
+    public String eliminar(@PathVariable("id") String id) {
         servicio.deleteCourse(id);
         return "redirect:/cursos/listar";
     }

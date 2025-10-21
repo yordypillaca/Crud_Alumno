@@ -1,22 +1,18 @@
 package com.tecsup.model.entities;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "cursos")
+@Document(collection = "cursos")
 public class Curso {
 
     @Id
-    @NotNull
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private String id;
 
-    @Column
     @NotNull
     private String nombre;
 
-    @Column
     @NotNull
     private int creditos;
 
@@ -24,17 +20,17 @@ public class Curso {
 
     }
 
-    public Curso(int id, String nombre, int creditos) {
+    public Curso(String id, String nombre, int creditos) {
         this.id = id;
         this.nombre = nombre;
         this.creditos = creditos;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

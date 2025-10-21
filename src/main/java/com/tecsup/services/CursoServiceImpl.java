@@ -20,7 +20,7 @@ public class CursoServiceImpl implements CursoService {
     }
 
     @Override
-    public Curso findByIdCourse(int id) {
+    public Curso findByIdCourse(String id) {
         return dao.findById(id).orElse(null);
     }
 
@@ -31,7 +31,7 @@ public class CursoServiceImpl implements CursoService {
     }
 
     @Override
-    public void deleteCourse(int id) {
+    public void deleteCourse(String id) {
         dao.deleteById(id);
     }
 
